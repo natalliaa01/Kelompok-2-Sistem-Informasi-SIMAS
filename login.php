@@ -2,53 +2,59 @@
 session_start();
 include "koneksi.php";
 
-if ($_POST) {
-  $user = $_POST['username'];
-  $pass = md5($_POST['password']);
+$error = "";
 
-  $q = mysqli_query($conn,
-    "SELECT * FROM admin WHERE username='$user' AND password='$pass'"
-  );
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $user = mysqli_real_escape_string($conn, $_POST['username']);
+    $pass = $_POST['password'];
 
-  if (mysqli_num_rows($q) == 1) {
-    $_SESSION['admin_login'] = $user;
-    header("Location: admin_dashboard.php");
-    exit;
-  } else {
-    $error = "Username atau password salah!";
-  }
+    $q = mysqli_query($conn, "SELECT * FROM users WHERE username='$user'");
+    $data = mysqli_fetch_assoc($q);
+
+    if ($data) {
+        if ($data && $pass === $data['password']) {
+
+            $_SESSION['login'] = true;
+            $_SESSION['username'] = $data['username'];
+            $_SESSION['role'] = $data['role'];
+
+            header("Location: admin_dashboard.php");
+            exit;
+
+        } else {
+            $error = "Password salah!";
+        }
+    } else {
+        $error = "Username tidak ditemukan!";
+    }
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-100 flex items-center justify-center h-screen">
 
-  <form method="POST"
-    class="bg-white p-6 rounded-2xl shadow-md w-80 space-y-4">
+<body class="bg-emerald-900">
 
-    <h2 class="text-center text-lg font-semibold text-slate-700">
-      Login Admin SIMAS
-    </h2>
+<div class="flex items-center justify-center h-screen">
+  <form method="post" class="bg-white p-8 rounded-xl shadow-lg w-80 space-y-4">
 
-    <?php if (!empty($error)): ?>
-      <p class="text-red-600 text-sm"><?= $error ?></p>
+    <h2 class="text-xl font-bold text-center text-slate-700">Login Admin</h2>
+
+    <?php if ($error): ?>
+      <p class="text-red-600 text-sm bg-red-100 p-2 rounded"><?= $error ?></p>
     <?php endif; ?>
 
-    <input name="username" placeholder="Username"
-      class="w-full border px-3 py-2 rounded-lg text-sm" required>
+    <input name="username" class="w-full border p-2 rounded" placeholder="Username" required>
+    <input type="password" name="password" class="w-full border p-2 rounded" placeholder="Password" required>
 
-    <input type="password" name="password" placeholder="Password"
-      class="w-full border px-3 py-2 rounded-lg text-sm" required>
-
-    <button class="w-full bg-emerald-600 text-white py-2 rounded-lg font-semibold">
+    <button class="bg-emerald-600 text-white w-full py-2 rounded hover:bg-emerald-700">
       Login
     </button>
 
   </form>
+</div>
 
 </body>
 </html>
