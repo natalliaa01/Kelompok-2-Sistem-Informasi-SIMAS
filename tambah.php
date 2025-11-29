@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <nav class="hidden md:flex gap-6 text-sm font-medium">
+    <nav class="flex gap-6 text-sm font-medium">      
       <a href="index.php" class="hover:text-amber-300">Beranda</a>
       <a href="data.php" class="hover:text-amber-300">Data Masjid/Mushalla</a>
       <a href="tambah.php" class="text-amber-300 font-semibold">Tambah Data</a>

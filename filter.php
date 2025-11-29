@@ -1,4 +1,5 @@
 <?php
+include "header.php";
 include "koneksi.php";
 
 /* ====== CEK KOLOM KECAMATAN ====== */
@@ -90,29 +91,6 @@ $hasil = mysqli_query($conn,
 </head>
 
 <body class="text-slate-800">
-
-<!-- NAVBAR -->
-<header class="bg-emerald-900 text-white">
-  <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-    <div class="flex items-center gap-3">
-      <img src="assets/img/logo-simas.png" class="h-10" alt="Logo SIMAS">
-      <div>
-        <p class="text-sm font-semibold uppercase">SIMAS</p>
-        <p class="text-xs text-emerald-100">Sistem Informasi Masjid</p>
-      </div>
-    </div>
-
-    <nav class="hidden md:flex gap-6 text-sm font-medium">
-      <a href="index.php" class="<?= basename($_SERVER['PHP_SELF'])=='index.php' ? 'text-amber-300 font-semibold' : 'hover:text-amber-300' ?>">Beranda</a>
-
-      <a href="data.php" class="<?= basename($_SERVER['PHP_SELF'])=='data.php' ? 'text-amber-300 font-semibold' : 'hover:text-amber-300' ?>">Data Masjid/Mushalla</a>
-
-      <a href="info.php" class="<?= basename($_SERVER['PHP_SELF'])=='info.php' ? 'text-amber-300 font-semibold' : 'hover:text-amber-300' ?>">Info Terkini</a>
-
-      <a href="kontak.php" class="<?= basename($_SERVER['PHP_SELF'])=='kontak.php' ? 'text-amber-300 font-semibold' : 'hover:text-amber-300' ?>">Kontak Kami</a>
-    </nav>
-  </div>
-</header>
 
 <!-- HERO KECIL -->
 <section class="bg-emerald-800 text-white">

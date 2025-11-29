@@ -43,6 +43,7 @@ $info_query = mysqli_query($conn, "SELECT * FROM info ORDER BY tanggal DESC LIMI
     <div class="flex justify-between items-center border-b px-6 py-4 bg-slate-50">
         <h2 class="text-lg font-semibold">Info Terbaru</h2>
         <a href="admin_info.php" class="text-sm text-emerald-700 hover:underline">Lihat Semua</a>
+
     </div>
 
     <table class="w-full text-sm">

@@ -1,4 +1,5 @@
 <?php
+include "header.php";
 include "koneksi.php";
 
 // CEK ID ADA APA NGGAK
@@ -31,10 +32,16 @@ if (!$m) {
 
 <body class="bg-slate-100 text-slate-800">
 
-<!-- HEADER SEDERHANA -->
-<div class="bg-emerald-800 text-white py-4 px-6">
-  <h1 class="text-xl font-semibold">Detail Masjid</h1>
-</div>
+
+<!-- HERO KECIL -->
+<section class="bg-emerald-800 text-white">
+  <div class="max-w-7xl mx-auto px-6 py-10 space-y-2">
+    <h1 class="text-3xl font-bold">Detail Masjid/Mushalla
+    <p class="text-sm max-w-2xl text-emerald-100">
+      Detail informasi terkait detail masjid/mushalla di Indonesia.
+    </p>
+  </div>
+</section>
 
 <!-- CONTENT -->
 <div class="max-w-5xl mx-auto p-6 space-y-6">

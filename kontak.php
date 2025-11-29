@@ -1,3 +1,5 @@
+<?php include "header.php"; ?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -13,26 +15,6 @@
   </style>
 </head>
 <body class="text-slate-800">
-
-<!-- NAVBAR -->
-<header class="bg-emerald-900 text-white">
-  <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-    <div class="flex items-center gap-3">
-      <img src="assets/img/logo-simas.png" class="h-10" alt="Logo SIMAS">
-      <div class="leading-tight">
-        <p class="text-sm font-semibold uppercase">SIMAS</p>
-        <p class="text-xs text-emerald-100">Sistem Informasi Masjid</p>
-      </div>
-    </div>
-
-    <nav class="hidden md:flex gap-6 text-sm font-medium">
-      <a href="index.php" class="hover:text-amber-300">Beranda</a>
-      <a href="data.php" class="hover:text-amber-300">Data Masjid/Mushalla</a>
-      <a href="info.php" class="hover:text-amber-300">Info Terkini</a>
-      <a href="kontak.php" class="text-amber-300 font-semibold">Kontak Kami</a>
-    </nav>
-  </div>
-</header>
 
 <!-- HERO -->
 <section class="bg-emerald-800 text-white">

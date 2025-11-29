@@ -38,6 +38,9 @@
         <a href="admin_info.php"
            class="block px-3 py-2 rounded hover:bg-emerald-700">Info Terkini</a>
 
+        <a href="admin_pengajuan.php" 
+            class="block px-3 py-2 rounded hover:bg-emerald-700">Verifikasi Pengajuan</a>
+
         <a href="admin_masjid.php"
            class="block px-3 py-2 rounded hover:bg-emerald-700">Data Masjid</a>
 
