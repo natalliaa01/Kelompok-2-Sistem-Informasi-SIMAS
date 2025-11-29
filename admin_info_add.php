@@ -1,6 +1,7 @@
 <?php
 include "koneksi.php";
 include "auth.php";
+include "admin_layout_header.php";
 
 $uploadDir = "uploads/";
 if (!is_dir($uploadDir)) {
